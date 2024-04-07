@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-
+// export
 module.exports = () => {
   return {
     mode: 'development',
@@ -43,12 +43,21 @@ module.exports = () => {
       }),
     ],
 
+ // confiles css loader  and babel to webpack 
+// module other codes chucks of code that wil find certain files
+// paramasis short for  parameters are variables that you list as part of a function definition
+// put them into the loader  
     module: {
+          // Adding CSS Loader
       rules: [
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
+         // Adding babel loader  
+        // loads any functionality 
+        // babels up
+        // complies js 
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
