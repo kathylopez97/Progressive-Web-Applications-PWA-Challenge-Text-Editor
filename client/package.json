@@ -1,9 +1,13 @@
 {
   "name": "JATE",
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "build": "webpack --mode production",
-    "start": "webpack --watchAll"
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server && nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "setup": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start",
+    "render-build": "npm run setup && npm run build"
     
   },
   "author": "2U",
