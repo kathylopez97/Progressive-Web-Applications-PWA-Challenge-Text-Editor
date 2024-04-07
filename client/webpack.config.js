@@ -18,13 +18,17 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+    // hot model middleware
     devServer: {
-      hot: 'only',
+      static: './dist',
+     hot: true,
+
     },
     plugins: [
       new HtmlWebpackPlugin({
         template:'./index.html',
-        title:'Webpack Plugin'
+        title:'Webpack Plugin',
+        title:'Hot Model Replacement'
       }),
       new InjectManifest({
         swSrc:'/src-sw.js',

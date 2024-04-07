@@ -39,3 +39,4 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
       ],
     })
 );
+
