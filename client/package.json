@@ -9,6 +9,7 @@
   "author": "2U",
   "license": "UNLICENSED",
   "devDependencies": {
+  
     "@babel/core": "^7.15.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/plugin-transform-runtime": "^7.15.0",
