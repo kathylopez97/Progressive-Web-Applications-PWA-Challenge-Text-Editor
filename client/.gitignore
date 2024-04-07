@@ -70,3 +70,6 @@ yarn.lock
 
 
 node_modules
+
+dist 
+ ./dist 
