@@ -1,23 +1,31 @@
 {
-  "name": "JATE",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-      "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "name": "JATE",
+    "version": "1.0.0",
+    "description": "J A T E  Text Editor",
+    "main": "server.js",
+    "scripts": {
+      "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\"",
       "start": "npm run build && cd server && node server.js",
-      "server": "cd server nodemon server.js --ignore client",
+      "server": "cd server && nodemon server.js --ignore client",
       "build": "cd client && npm run build",
-      "install": "cd server && npm i && cd ../client && npm i",
-      "client": "cd client && npm start"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+      "setup": "cd server && npm i && cd ../client && npm i",
+      "client": "cd client && npm start",
+      "render-build": "npm run setup && npm run build"
+    },
+    "keywords": [],
+    "author": "Kathy Lopez",
+    "license": "ISC",
+    "dependencies": {
+      "css-loader": "^6.7.1",
       "express": "^4.17.1",
-      "if-env": "^1.0.4"
-  },
+      "html-webpack-plugin": "^5.5.0",
+      "if-env": "^1.0.4",
+      "mini-css-extract-plugin": "^2.6.0",
+      "style-loader": "^3.3.1",
+      "webpack": "^5.72.0",
+      "webpack-cli": "^4.9.2",
+      "webpack-pwa-manifest": "^4.3.0"
+    },
   "devDependencies": {
       "concurrently": "^5.2.0",
       "mini-css-extract-plugin": "^2.7.6",
