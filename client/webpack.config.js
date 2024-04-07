@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
@@ -23,15 +24,17 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template:'./index.html',
-        title:'JATE Text Editor'
+        title:'Webpack Plugin'
       }),
       new InjectManifest({
         swSrc:'/src-sw.js',
         swDest:'src-sw.js'
       }),
+      new MiniCssExtractPlugin(),
+
       new WebpackPwaManifest({
         name: 'JATE TEXT EDITOR',
-        short_name: 'JATE',
+        short_name: 'J.A.T.E',
         description: 'Creative text editor online or offline',
         background_color: '#453430',
         theme_color: '#453430',
@@ -58,12 +61,12 @@ module.exports = () => {
         {
           // Adding CSS Loader
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },   
         // loads images
         {
           test:/\.(png|svg|jpg|jpeg|gif)$/i,
-          type:'assets/resource',
+          type:'asset/resource',
         },
         // Adding babel loader  
         // loads any functionality 
