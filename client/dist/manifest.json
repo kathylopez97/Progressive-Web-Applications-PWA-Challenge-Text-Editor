@@ -31,12 +31,12 @@
       "type": "image/png"
     }
   ],
-  "name": "JATE TEXT EDITOR",
+  "name": "Just Another Text Editor",
   "short_name": "J.A.T.E",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "/",
-  "description": "Creative text editor online or offline",
-  "background_color": "#453430",
-  "theme_color": "#453430"
+  "description": "Takes notes with JavaScript syntax highlighting!",
+  "background_color": "#225ca3",
+  "theme_color": "#225ca3"
 }
